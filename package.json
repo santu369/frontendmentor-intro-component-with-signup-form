@@ -1,0 +1,25 @@
+{
+  "name": "frontendmentor-intro-component-with-signup-form",
+  "version": "1.0.0",
+  "description": "![Design preview for the Intro component with sign up form coding challenge](./design/desktop-preview.jpg)",
+  "main": "script.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santu369/frontendmentor-intro-component-with-signup-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/santu369/frontendmentor-intro-component-with-signup-form/issues"
+  },
+  "homepage": "https://github.com/santu369/frontendmentor-intro-component-with-signup-form#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.12"
+  }
+}
