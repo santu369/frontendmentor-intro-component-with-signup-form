@@ -18,7 +18,6 @@ formEl.addEventListener("submit", (e) => {
   error = false;
   checkInputs();
   if (!error) {
-    console.log("pass");
     firstNameFieldEl.children[1].value = "";
     lastNameFieldEl.children[1].value = "";
     emailAddressFieldEl.children[1].value = "";

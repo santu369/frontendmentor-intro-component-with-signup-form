@@ -40,11 +40,11 @@
           <span class="section__intro--light">then $20/mo. thereafter</span>
         </h2>
         <form class="form" id="form" target="_self">
-          <div class="form__field" id="first-name">
+          <div class="form__field" id="form-control-first-name">
             <label class="sr-only" for="first-name">First Name</label>
             <input
               placeholder="First Name"
-              id="first-name-value"
+              id="first-name"
               type="text"
               class="form__input"
               autocomplete="off"
@@ -61,11 +61,11 @@
               First Name cannot be empty
             </p>
           </div>
-          <div class="form__field" id="last-name">
+          <div class="form__field" id="form-control-last-name">
             <label class="sr-only" for="last-name">Last Name</label>
             <input
               placeholder="Last Name"
-              id="last-name-value"
+              id="last-name"
               type="text"
               class="form__input"
               autocomplete="off"
@@ -82,11 +82,11 @@
               Last Name cannot be empty
             </p>
           </div>
-          <div class="form__field" id="email-address">
+          <div class="form__field" id="form-control-email-address">
             <label class="sr-only" for="email-address">Email Address</label>
             <input
               placeholder="Email Address"
-              id="email-address-value"
+              id="email-address"
               type="email"
               class="form__input"
               autocomplete="off"
@@ -103,11 +103,14 @@
               Email cannot be empty
             </p>
           </div>
-          <div class="form__field form__field--password" id="password">
+          <div
+            class="form__field form__field--password"
+            id="form-control-password"
+          >
             <label class="sr-only" for="password">Password</label>
             <input
               placeholder="Password"
-              id="password-value"
+              id="password"
               type="password"
               class="form__input"
               autocomplete="off"
