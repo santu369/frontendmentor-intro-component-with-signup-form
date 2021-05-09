@@ -1,9 +1,11 @@
 const formEl = document.getElementById("form");
 
-const firstNameFieldEl = document.getElementById("first-name");
-const lastNameFieldEl = document.getElementById("last-name");
-const emailAddressFieldEl = document.getElementById("email-address");
-const passwordFieldEl = document.getElementById("password");
+const firstNameFieldEl = document.getElementById("form-control-first-name");
+const lastNameFieldEl = document.getElementById("form-control-last-name");
+const emailAddressFieldEl = document.getElementById(
+  "form-control-email-address"
+);
+const passwordFieldEl = document.getElementById("form-control-password");
 
 const passwordViewToggleEl = document.getElementById("password-toggle");
 
