@@ -22,7 +22,7 @@ body {
   font-family: "Poppins", sans-serif;
   color: white;
   min-height: 100vh;
-  min-width: 300px;
+  min-width: 325px;
   display: flex;
   flex-direction: column;
   background: #ff7a7a url("../images/bg-intro-mobile.png") no-repeat center center/cover;
@@ -71,8 +71,23 @@ body {
   font-size: 1.5rem;
   box-shadow: 0 10px 1px 0 rgba(62, 60, 73, 0.25);
 }
-.form__element {
+.form__field {
   position: relative;
+  margin-bottom: 1em;
+}
+.form__field.error .form__error--msg {
+  opacity: 1;
+  display: block;
+}
+.form__field.error .form__error--img {
+  display: block;
+}
+.form__field.error .form__input {
+  border: 2px solid #ff7a7a;
+  color: #ff7a7a;
+}
+.form__field.error .password-icon {
+  right: 2em;
 }
 .form__input {
   padding: 1.4em 1em;
@@ -82,7 +97,6 @@ body {
   font-weight: 700;
   border-radius: 0.5em;
   outline: none;
-  margin-bottom: 1em;
 }
 .form__input::placeholder {
   font-weight: 700;
@@ -110,13 +124,8 @@ body {
   opacity: 1;
   transform: scale(0.95);
 }
-.form__input.show {
+.form__error {
   transition: all 0.5s ease-in-out;
-  opacity: 1;
-}
-.form__input.error {
-  border: 2px solid #ff7a7a;
-  color: #ff7a7a;
 }
 .form__error--msg {
   opacity: 0;
@@ -125,20 +134,39 @@ body {
   bottom: -2em;
   color: #ff7a7a;
   margin-top: 0.5em;
-  margin-bottom: 1em;
   text-align: right;
   font-weight: 600;
   font-style: italic;
   margin-right: 0.3em;
 }
 .form__error--img {
-  opacity: 0;
+  display: none;
   position: absolute;
   font-size: 0.8rem;
   right: 1em;
   left: auto;
   top: 1.4em;
   color: #ff7a7a;
+}
+.form .password-icon {
+  display: none;
+  position: absolute;
+  right: 1em;
+  left: auto;
+  top: 0.5em;
+  color: #575757;
+  cursor: pointer;
+  padding: 0.25em;
+  border-radius: 50%;
+}
+.form .password-icon:hover, .form .password-icon:focus {
+  background-color: #f0f0f0;
+  color: black;
+  outline: none;
+}
+.form__field--password > .form__input:hover,
+.form :focus + .password-icon {
+  display: inline-block;
 }
 .form__footer {
   padding: 0 3em;
@@ -151,6 +179,17 @@ body {
   text-decoration: none;
   font-weight: 700;
   color: #ff7a7a;
+}
+.form__footer--link:hover, .form__footer--link:focus {
+  text-decoration: underline;
+}
+.form__success {
+  opacity: 0;
+  margin-top: 0.25em;
+  font-size: 1rem;
+  color: #6055a5;
+  font-weight: 600;
+  transition: opacity 250ms ease-in-out;
 }
 
 /* footer */
@@ -179,7 +218,7 @@ body {
   .main {
     display: grid;
     place-items: center;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 40% 50%;
     gap: 5em;
     min-height: 100vh;
   }
@@ -197,10 +236,8 @@ body {
   }
 
   .main {
-    margin-left: 5em;
-    margin-right: 5em;
     gap: 2.5em;
-    grid-template-columns: 45% 48%;
+    grid-template-columns: 45% max(50%, 450px);
   }
 
   .header {
@@ -217,8 +254,13 @@ body {
     line-height: 1.5em;
   }
 
+  .section {
+    width: 90%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
   .section__intro {
-    padding: 2em 3em 1.5em 3em;
+    padding: 2em 3em;
   }
 
   .form {
@@ -232,6 +274,21 @@ body {
   }
   .form__error--img {
     right: 2.5em;
+  }
+  .form__field.error .password-icon {
+    right: 2.5em;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .main {
+    margin-left: 5em;
+    margin-right: 7em;
+    gap: 2.5em;
+    grid-template-columns: 47% 52%;
+  }
+
+  .section {
+    width: min(100%, 600px);
   }
 }
 

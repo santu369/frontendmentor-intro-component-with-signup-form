@@ -22,11 +22,15 @@ $bg-intro-desktop: "../images/bg-intro-desktop.png";
 $bg-intro-mobile: "../images/bg-intro-mobile.png";
 
 $white: hsl(0, 0%, 100%);
+$gray: hsl(0, 0%, 34%);
+$light-gray: hsl(0, 0%, 94%);
+$black: hsl(0, 0%, 0%);
 $neu-dark-blue-transparent: hsla(249, 10%, 26%, 0.25);
 $neu-gray-blue-transparent: hsla(246, 25%, 77%, 0.363);
 
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
+$breakpoint-laptop-large: 1440px;
 
 *,
 *::before,
@@ -50,7 +54,7 @@ body {
   font-family: $font-family;
   color: $white;
   min-height: 100vh;
-  min-width: 300px;
+  min-width: 325px;
   display: flex;
   flex-direction: column;
   background: $prim-red url($bg-intro-mobile) no-repeat center center/cover;
@@ -100,8 +104,23 @@ body {
   padding: 1em;
   font-size: 1.5rem;
   box-shadow: 0 10px 1px 0 $neu-dark-blue-transparent;
-  &__element {
+  &__field {
     position: relative;
+    margin-bottom: 1em;
+    &.error .form__error--msg {
+      opacity: 1;
+      display: block;
+    }
+    &.error .form__error--img {
+      display: block;
+    }
+    &.error .form__input {
+      border: 2px solid $prim-red;
+      color: $prim-red;
+    }
+    &.error .password-icon {
+      right: 2em;
+    }
   }
   &__input {
     padding: 1.4em 1em;
@@ -111,7 +130,6 @@ body {
     font-weight: $font-bold;
     border-radius: 0.5em;
     outline: none;
-    margin-bottom: 1em;
     &::placeholder {
       font-weight: $font-bold;
       font-family: inherit;
@@ -139,17 +157,10 @@ body {
         transform: scale(0.95);
       }
     }
-    &.show {
-      transition: all 0.5s ease-in-out;
-      opacity: 1;
-    }
-    &.error {
-      border: 2px solid $prim-red;
-      color: $prim-red;
-    }
   }
 
   &__error {
+    transition: all 0.5s ease-in-out;
     &--msg {
       opacity: 0;
       display: none;
@@ -157,14 +168,13 @@ body {
       bottom: -2em;
       color: $prim-red;
       margin-top: 0.5em;
-      margin-bottom: 1em;
       text-align: right;
       font-weight: $font-semibold;
       font-style: italic;
       margin-right: 0.3em;
     }
     &--img {
-      opacity: 0;
+      display: none;
       position: absolute;
       font-size: 0.8rem;
       right: 1em;
@@ -172,6 +182,28 @@ body {
       top: 1.4em;
       color: $prim-red;
     }
+  }
+
+  .password-icon {
+    display: none;
+    position: absolute;
+    right: 1em;
+    left: auto;
+    top: 0.5em;
+    color: $gray;
+    cursor: pointer;
+    padding: 0.25em;
+    border-radius: 50%;
+    &:hover,
+    &:focus {
+      background-color: $light-gray;
+      color: $black;
+      outline: none;
+    }
+  }
+  &__field--password > .form__input:hover,
+  :focus + .password-icon {
+    display: inline-block;
   }
 
   &__footer {
@@ -184,7 +216,19 @@ body {
       text-decoration: none;
       font-weight: $font-bold;
       color: $prim-red;
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
+  }
+  &__success {
+    opacity: 0;
+    margin-top: 0.25em;
+    font-size: 1rem;
+    color: $acc-blue;
+    font-weight: $font-semibold;
+    transition: opacity 250ms ease-in-out;
   }
 }
 
@@ -214,7 +258,7 @@ body {
   .main {
     display: grid;
     place-items: center;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 40% 50%;
     gap: 5em;
     min-height: 100vh;
   }
@@ -231,10 +275,8 @@ body {
     align-items: center;
   }
   .main {
-    margin-left: 5em;
-    margin-right: 5em;
     gap: 2.5em;
-    grid-template-columns: 45% 48%;
+    grid-template-columns: 45% max(50%, 450px);
   }
   .header {
     margin: 0;
@@ -250,8 +292,11 @@ body {
     }
   }
   .section {
+    width: 90%;
+    margin-top: 1em;
+    margin-bottom: 1em;
     &__intro {
-      padding: 2em 3em 1.5em 3em;
+      padding: 2em 3em;
     }
   }
   .form {
@@ -264,10 +309,25 @@ body {
         margin-right: 1.5em;
       }
       &--img {
-        // top: 5.1em;
-        // left: 88%;
         right: 2.5em;
       }
     }
+    &__field {
+      &.error .password-icon {
+        right: 2.5em;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-laptop-large) {
+  .main {
+    margin-left: 5em;
+    margin-right: 7em;
+    gap: 2.5em;
+    grid-template-columns: 47% 52%;
+  }
+  .section {
+    width: min(100%, 600px);
   }
 }

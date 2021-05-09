@@ -12,6 +12,12 @@
     <base target="_blank" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
     <script src="./script.js" defer></script>
     <title>Frontend Mentor | Intro component with sign up form</title>
   </head>
@@ -33,83 +39,92 @@
           <span class="section__intro--light">then $20/mo. thereafter</span>
         </h2>
         <form class="form" id="form" target="_self">
-          <div class="form__element">
+          <div class="form__field" id="first-name">
             <label class="sr-only" for="first-name">First Name</label>
             <input
               placeholder="First Name"
-              id="first-name"
+              id="first-name-value"
               type="text"
               class="form__input"
               autocomplete="off"
-              required
+              minlength="2"
+              maxlength="50"
             />
             <img
-              id="form__error-img"
+              id="first-name-error-img"
               class="form__error--img"
               src="./images/icon-error.svg"
               alt="Error in First Name"
             />
-            <p id="error--first-name" class="form__error--msg">
+            <p id="first-name-error-msg" class="form__error--msg">
               First Name cannot be empty
             </p>
           </div>
-          <div class="form__element">
+          <div class="form__field" id="last-name">
             <label class="sr-only" for="last-name">Last Name</label>
             <input
               placeholder="Last Name"
-              id="last-name"
+              id="last-name-value"
               type="text"
               class="form__input"
               autocomplete="off"
-              required
+              minlength="1"
+              maxlength="25"
             />
             <img
-              id="form__error-img"
+              id="last-name-error-img"
               class="form__error--img"
               src="./images/icon-error.svg"
               alt="Error in Last Name"
             />
-            <p id="error--last-name" class="form__error--msg">
+            <p id="last-name-error-msg" class="form__error--msg">
               Last Name cannot be empty
             </p>
           </div>
-          <div class="form__element">
+          <div class="form__field" id="email-address">
             <label class="sr-only" for="email-address">Email Address</label>
             <input
               placeholder="Email Address"
-              id="email-address"
+              id="email-address-value"
               type="email"
               class="form__input"
               autocomplete="off"
-              required
+              minlength="5"
+              maxlength="25"
             />
             <img
-              id="form__error-img"
+              id="email-address-error-img"
               class="form__error--img"
               src="./images/icon-error.svg"
               alt="Error in Email"
             />
-            <p id="error--email" class="form__error--msg">
+            <p id="email-address-error-msg" class="form__error--msg">
               Email cannot be empty
             </p>
           </div>
-          <div class="form__element">
+          <div class="form__field form__field--password" id="password">
             <label class="sr-only" for="password">Password</label>
             <input
               placeholder="Password"
-              id="password"
+              id="password-value"
               type="password"
               class="form__input"
               autocomplete="off"
-              required
+              maxlength="20"
+              minlength="8"
             />
+            <i
+              tabindex="0"
+              class="far fa-eye password-icon"
+              id="password-toggle"
+            ></i>
             <img
-              id="form__error-img"
+              id="password-error-img"
               class="form__error--img"
               src="./images/icon-error.svg"
               alt="Error in Password"
             />
-            <p id="error--email" class="form__error--msg">
+            <p id="password-error-msg" class="form__error--msg">
               Password cannot be empty
             </p>
           </div>
@@ -124,6 +139,9 @@
             <a href="" rel="noopener noreferrer" class="form__footer--link"
               >Terms and Services</a
             >
+          </p>
+          <p class="form__success" id="form-success-msg">
+            Thanks for signing up
           </p>
         </form>
       </section>
