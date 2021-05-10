@@ -1,3 +1,5 @@
+/* get references */
+
 const formEl = document.getElementById("form");
 
 const firstNameFieldEl = document.getElementById("form-control-first-name");
@@ -11,9 +13,13 @@ const passwordViewToggleEl = document.getElementById("password-toggle");
 
 const formSuccessMsgEl = document.getElementById("form-success-msg");
 
+/* set states */
+
 let error;
 let passwordViewToggled = false;
 let passwordViewTimeout = "";
+
+/* form submit */
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -27,6 +33,8 @@ formEl.addEventListener("submit", (e) => {
     formSuccessMsgEl.style.opacity = 1;
   }
 });
+
+/* validate all form inputs */
 
 const checkInputs = () => {
   checkInput(
@@ -55,6 +63,8 @@ const checkInputs = () => {
   );
 };
 
+/* validate each form input */
+
 const checkInput = (type, fieldName, value, element) => {
   if (type === "text" || type === "password") {
     if (value === "") {
@@ -75,11 +85,15 @@ const checkInput = (type, fieldName, value, element) => {
   }
 };
 
+/* validate email */
+
 function isEmail(email) {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{3,}))$/.test(
     email
   );
 }
+
+/* set error */
 
 const setError = (element, msg) => {
   error = true;
@@ -87,9 +101,13 @@ const setError = (element, msg) => {
   element.children[3].textContent = msg;
 };
 
+/* reset error */
+
 const resetError = (element) => {
   element.classList.remove("error");
 };
+
+/* toggle show/hide password */
 
 passwordFieldEl.children[1].addEventListener("focus", (e) => {
   passwordViewToggleEl.style.display = "block";
