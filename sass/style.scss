@@ -184,7 +184,7 @@ body {
       background-color: $prim-green;
       padding: 1em;
       letter-spacing: 1px;
-      transition: all 100ms ease-out;
+      transition: opacity 0.5s ease-out;
       &:focus,
       &:hover {
         opacity: 0.8;
@@ -281,7 +281,6 @@ body {
     font-size: 1rem;
     color: $acc-blue;
     font-weight: $font-semibold;
-    transition: opacity 250ms ease-in-out;
   }
 }
 
