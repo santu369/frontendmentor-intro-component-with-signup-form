@@ -31,6 +31,7 @@ formEl.addEventListener("submit", (e) => {
     emailAddressFieldEl.children[1].value = "";
     passwordFieldEl.children[1].value = "";
     formSuccessMsgEl.style.opacity = 1;
+    formSuccessMsgEl.style.visibility = "revert";
   }
 });
 

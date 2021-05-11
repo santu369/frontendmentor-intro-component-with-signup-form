@@ -4,10 +4,10 @@
   "description": "Frontendmentor Intro Component With Signup Form",
   "main": "script.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "clean": "rd/s/q .cache, dist",
-    "clean-build": "npm run clean && parcel build index.html --public-url ./",
-    "build": "parcel build index.html --public-url ./"
+    "dev": "parcel index.html --open",
+    "clean": "rm -rf .cache dist",
+    "clean-cache": "rm -rf .cache",
+    "build": "npm run clean && parcel build index.html --public-url ./ && npm run clean-cache"
   },
   "repository": {
     "type": "git",

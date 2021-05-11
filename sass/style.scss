@@ -277,6 +277,7 @@ body {
   /* success state */
   &__success {
     opacity: 0;
+    visibility: hidden;
     margin-top: 0.25em;
     font-size: 1rem;
     color: $acc-blue;
