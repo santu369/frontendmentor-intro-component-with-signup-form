@@ -53,6 +53,28 @@ $breakpoint-laptop-large: 1440px;
   border: 0;
 }
 
+/* Focus for input */
+
+input:focus-visible {
+  outline: 3px dotted $prim-red;
+  outline-offset: 0.1rem;
+}
+
+input:focus:not(:focus-visible) {
+  outline: transparent;
+}
+
+/* Focus for links */
+
+a:focus-visible {
+  outline: 3px dotted $prim-green;
+  outline-offset: 0.1rem;
+}
+
+a:focus:not(:focus-visible) {
+  outline: transparent;
+}
+
 body {
   font-size: $font-size;
   font-family: $font-family;
@@ -120,10 +142,11 @@ body {
     /* display errors */
     &.error .form__error--msg {
       opacity: 1;
-      display: block;
+      visibility: revert;
     }
     &.error .form__error--img {
-      display: block;
+      opacity: 1;
+      visibility: revert;
     }
     &.error .form__input {
       border: 2px solid $prim-red;
@@ -148,6 +171,7 @@ body {
     &:focus {
       box-shadow: 0px 0px 5px 0 $neu-gray-blue;
     }
+
     &--submit {
       cursor: pointer;
       margin-bottom: 0.5em;
@@ -171,10 +195,10 @@ body {
   }
   /* error states */
   &__error {
-    transition: all 0.5s ease-in-out;
     &--msg {
+      transition: all 0.5s ease-in-out;
       opacity: 0;
-      display: none;
+      visibility: hidden;
       font-size: 0.75rem;
       bottom: -2em;
       color: $prim-red;
@@ -185,7 +209,9 @@ body {
       margin-right: 0.3em;
     }
     &--img {
-      display: none;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
       position: absolute;
       font-size: 0.8rem;
       right: 1em;

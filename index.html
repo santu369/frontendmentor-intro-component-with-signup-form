@@ -38,7 +38,7 @@
           Try it free 7 days
           <span class="section__intro--light">then $20/mo. thereafter</span>
         </h2>
-        <form class="form" id="form" target="_self">
+        <form class="form" id="form" target="_self" novalidate>
           <div class="form__field" id="form-control-first-name">
             <label class="sr-only" for="first-name">First Name</label>
             <input
@@ -47,8 +47,6 @@
               type="text"
               class="form__input"
               autocomplete="off"
-              minlength="2"
-              maxlength="50"
             />
             <img
               id="first-name-error-img"
@@ -57,7 +55,7 @@
               alt="Error in First Name"
             />
             <p id="first-name-error-msg" class="form__error--msg">
-              First Name cannot be empty
+              First Name Error
             </p>
           </div>
           <div class="form__field" id="form-control-last-name">
@@ -68,8 +66,6 @@
               type="text"
               class="form__input"
               autocomplete="off"
-              minlength="1"
-              maxlength="25"
             />
             <img
               id="last-name-error-img"
@@ -78,7 +74,7 @@
               alt="Error in Last Name"
             />
             <p id="last-name-error-msg" class="form__error--msg">
-              Last Name cannot be empty
+              Last Name Error
             </p>
           </div>
           <div class="form__field" id="form-control-email-address">
@@ -89,8 +85,6 @@
               type="email"
               class="form__input"
               autocomplete="off"
-              minlength="5"
-              maxlength="35"
             />
             <img
               id="email-address-error-img"
@@ -99,7 +93,7 @@
               alt="Error in Email"
             />
             <p id="email-address-error-msg" class="form__error--msg">
-              Email cannot be empty
+              Email Error
             </p>
           </div>
           <div
@@ -113,8 +107,6 @@
               type="password"
               class="form__input"
               autocomplete="off"
-              maxlength="20"
-              minlength="8"
             />
             <i
               tabindex="0"
@@ -128,7 +120,7 @@
               alt="Error in Password"
             />
             <p id="password-error-msg" class="form__error--msg">
-              Password cannot be empty
+              Password Error
             </p>
           </div>
           <input
