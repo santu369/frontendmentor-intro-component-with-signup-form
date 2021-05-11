@@ -141,10 +141,12 @@ body {
     margin-bottom: 1em;
     /* display errors */
     &.error .form__error--msg {
+      transition: visibility 0.5s ease-in-out;
       opacity: 1;
       visibility: revert;
     }
     &.error .form__error--img {
+      transition: visibility 0.5s ease-in-out;
       opacity: 1;
       visibility: revert;
     }
@@ -196,7 +198,6 @@ body {
   /* error states */
   &__error {
     &--msg {
-      transition: all 0.5s ease-in-out;
       opacity: 0;
       visibility: hidden;
       font-size: 0.75rem;
@@ -209,7 +210,6 @@ body {
       margin-right: 0.3em;
     }
     &--img {
-      transition: all 0.5s ease-in-out;
       opacity: 0;
       visibility: hidden;
       position: absolute;
